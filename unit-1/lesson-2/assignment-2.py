@@ -15,7 +15,7 @@ from unit1lesson2 import *
 #     if x < smallestnumber:
 #         smallestnumber = x
 # print(smallestnumber)
-# # ..... E1 Answer is 175
+# ..... E1 Answer is 175
 
 
 
@@ -45,8 +45,10 @@ from unit1lesson2 import *
 
 # 22222222222222222222222222222222222222222222
 
+# numbers_above_500 = [num for num in number_list if num > 500]
+# print(numbers_above_500[0])
 
-# # ...... Beimnet
+# ...... Beimnet
 # number_list.sort()
 
 # for x in number_list:
@@ -87,7 +89,7 @@ from unit1lesson2 import *
 # 33333333333333333333333333333333
 
 
-# #...... Chris
+# ...... Chris
 
 # number_list.sort()
 # even_numbers = []
@@ -111,9 +113,10 @@ from unit1lesson2 import *
 
 
 
-# ###### lets make our own "sort" function to get smallest even number
+###### lets make our own "sort" function to get smallest even number
 
-# #define a function
+
+#define a function
 # def sortSmallToBig(wholeList):
 #     # #use Lara's algorithm
 #     smallest = wholeList[0]
@@ -126,7 +129,7 @@ from unit1lesson2 import *
 
 
 
-# #now use Chris' algorithm
+#now use Chris' algorithm
 # even_numbers = []
 
 # for num in number_list:
