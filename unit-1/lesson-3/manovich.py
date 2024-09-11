@@ -6,15 +6,15 @@
 # representations.”
 
 
-# from PIL import Image
+from PIL import Image
 
-# image = Image.open("image-1.jpg")
+image = Image.open("image-1.jpg")
 
-# for w in range(image.size[0]):
-#     for h in range(image.size[1]):
-#         if h % 2 == 0 and w > 300:
-#             image.putpixel((w, h), (255, 0, 4))
-# image.save("2.jpg")
+for w in range(image.size(0)):
+    for h in range(image.size[1]):
+        if h % 2 == 0 and w > 300:
+            image.putpixel((w, h), (255, 0, 4))
+image.save("2.jpg")
 
 
 
@@ -42,6 +42,7 @@
 
 
 # glitchImageWithRed('image-1.jpg', (123,0,0), "rando")
+# glitchImageWithRed('image-2.jpg', (123,0,0), "rando")
 
 
 
@@ -91,6 +92,13 @@
 # Extra
 # What did you think about his writing on interactivity?
 
+
+
+
+
+
+
+
 ## CLASSWORK
 # Make a ManovichBot
 
@@ -130,3 +138,15 @@
 # repeat this for the other four principles! be creative with how you produce your output! you can also experiment with retrieving different kinds of input using sys.argv (remember this from lesson 3 notes)
 
 # extra! can you add error handling is the user writes a typo? can you turn some of the code into a function that can be reused for each of the 5 principle?
+
+
+
+import sys
+from manovichdata import *
+
+userInput = sys.argv[1]
+
+# check if the user entered an argument that is too large
+if userInput == "variability":
+    print(variability[0])
+    exit()
