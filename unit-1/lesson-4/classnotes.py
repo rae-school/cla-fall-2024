@@ -28,7 +28,7 @@ from PIL import Image
 # print(one_pixel)
 
 # img.putpixel( (10,10), (255,0,0) )
-# img.save("new.jpg")
+# img.save("new.png")
 
 
 
@@ -61,11 +61,12 @@ from PIL import Image
 #####################################################################################
 # # FILTER PIXELS AS A LIST
 
-# img = Image.open( sys.argv[1] )
-# img_hsv = img.convert(mode="HSV")
+# carrot = Image.open( sys.argv[1] )
+# img_hsv = carrot.convert(mode="HSV")
 # img_hsv_data = img_hsv.getdata()
 
 # new_img_data = []
+
 # for p in img_hsv_data:
 #     print(p)
 #     if p[2] < 55:
@@ -163,20 +164,20 @@ from PIL import Image
 # # # GENERATE IMAGE EX 1 - 400x400 ---- TO RUN THIS FROM MY TERMINAL I WROTE
 # ## python3 classnotes.py generative-3.jpg 
 
-# if len(sys.argv) != 2:
-#     exit("This program requires one argument: the name of the image file that will be created.")
+if len(sys.argv) != 2:
+    exit("This program requires one argument: the name of the image file that will be created.")
 
-# # Make a new 400x400 image
-# img = Image.new("RGB", (400,400) )
+# Make a new 400x400 image
+img = Image.new("RGB", (400,400) )
 
-# data = []
-# for i in range(160000):
-#     pixel = (i, 0, 255-i)
-#     data.append( pixel )
+data = []
+for i in range(160000):
+    pixel = (i, 0, 255-i)
+    data.append( pixel )
 
-# img.putdata(data)
+img.putdata(data)
 
-# img.save(sys.argv[1])
+img.save(sys.argv[1])
 
 
 
