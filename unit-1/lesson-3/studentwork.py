@@ -1,4 +1,4 @@
-## can we find the 2 bugs to find in this code?
+# # can we find the 2 bugs to find in this code?
 
 # # # imports
 # import sys
@@ -15,12 +15,12 @@
 # primary_image = Image.open(args[0])
 # secondary_image = Image.open(args[1])
 # blended_image = Image.blend(primary_image, secondary_image, .5) # images don't match error. tried different formats, matching sizes, ez
-# blended_image.image('blended.jpg')
+# blended_image.save('blended.jpg')
 
 
 
 
-
+## rgb split out and re-blend images >> 
 
 
 
@@ -69,32 +69,49 @@
 
 
 
-### is there a way to blend 3 images at once??
+## is there a way to blend 3 images at once??
 
 # import sys
 # from PIL import Image
 
-# if len(sys.argv) != 3:
-#     exit("This command requires one argument: the name of 2 image files")
+# if len(sys.argv) != 4:
+#     exit("This command requires one argument: the name of 3 image files")
 
 # img1 = Image.open( sys.argv[1] )
 # img2 = Image.open( sys.argv[2] )
+# img3 = Image.open ( sys.argv[3])
+
+
 
 # blended_img = Image.blend(img1,img2,.7) #images have to be the same size otherise it errors
 
+# three_img_blend = Image.blend(blended_img, img3, .2)
+# three_img_blend.save("blend3.jpg")
+
+
 # blended_img.save("blended3.jpg")
 
-# ## i tried being crazy and blending 3 images all together at once like:
+
+
+
+
+
+
+
+
+
+
+## i tried being crazy and blending 3 images all together at once like:
 # if len(sys.argv) != 4:
 #     exit("This command requires three arguments: the name of 3 image files")
 
-# # img1 = Image.open( sys.argv[1] )
-# # img2 = Image.open( sys.argv[2] )
-# # img3 = Image.open( sys.argv[3] )
+# img1 = Image.open( sys.argv[1] )
+# img2 = Image.open( sys.argv[2] )
+# img3 = Image.open( sys.argv[3] )
 
-# # blended_img = Image.blend(img1,img2,img3,.5) #images have to be the same size otherise it errors
+# blended_img = Image.blend(img1,img2,img3,.5) #images have to be the same size otherise it errors
 
-# ### that did not work out lol, my research said it would have to be like first two and then bledn again to the third?? how accurate that is im not sure
+### that did not work out lol, my research said it would have to be like first two and then bledn again to the third?? how accurate that is im not sure
 
 
 
@@ -107,6 +124,11 @@
 
 # import sys
 # word_list = sys.argv 
+
+# if len(sys.argv) == 4:
+#     exit("you need 4 arguments")
+
+# print(word_list)
 # #data = [ 'badah', 'wants', 'to', 'code', 'better' ]
 # #index = int(sys.argv)
 # #print( data[index] )
@@ -127,7 +149,7 @@
 
 
 
-### can we find the bug in this code?
+## can we find the bug in this code?
 
 # import sys
 # from PIL import Image
@@ -136,7 +158,8 @@
 #     print("Error: Please provide two image filenames.")
 #     sys.exit(1)
 
-# blended_img = Image.blend(img1,img2,.5)
-
 # img1 = Image.open(sys.argv[1])
 # img2 = Image.open(sys.argv[2])
+
+# blended_img = Image.blend(img1,img2,.5)
+
