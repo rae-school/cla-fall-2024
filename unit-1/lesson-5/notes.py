@@ -1,5 +1,18 @@
-# from PIL import Image
-# import random
+from PIL import Image
+import random
+from os import listdir, path
+
+
+### random seed example
+seed1 = random.seed(1)
+randomFromSeed1A = int(random.random() * 100)
+randomFromSeed1B  = int(random.random() * 100)
+
+seed2 = random.seed(2)
+randomFromSeed2A = int(random.random() * 100)
+randomFromSeed2B  = int(random.random() * 100)
+print(randomFromSeed1A, randomFromSeed1B, randomFromSeed2A, randomFromSeed2B)
+
 
 
 ## pixel grid!
@@ -104,32 +117,28 @@
 
 ## 6 in class exercise
 
-from os import listdir, path
-import random
-from PIL import Image
+# files = listdir("images")
+# # files.remove(".DS_Store")
 
-files = listdir("images")
-# files.remove(".DS_Store")
+# random_file = random.choice(files)
 
-random_file = random.choice(files)
+# img = Image.open( path.join("images",random_file) )
 
-img = Image.open( path.join("images",random_file) )
+# img_hsv = img.convert(mode="HSV")
+# img_hsv_data = img_hsv.getdata()
 
-img_hsv = img.convert(mode="HSV")
-img_hsv_data = img_hsv.getdata()
+# new_img_data = []
 
-new_img_data = []
-
-for p in img_hsv_data:
-    if p[2] < 55:
-        new_img_data.append( (120,120,120) )
-    else:
-        new_img_data.append(p)
+# for p in img_hsv_data:
+#     if p[2] < 55:
+#         new_img_data.append( (120,120,120) )
+#     else:
+#         new_img_data.append(p)
 
 
-img_hsv.putdata(new_img_data)
-img_rgb = img_hsv.convert("RGB")
-img_rgb.save(path.join("images","new.jpg") )
+# img_hsv.putdata(new_img_data)
+# img_rgb = img_hsv.convert("RGB")
+# img_rgb.save(path.join("images","new.jpg") )
 
 
 # ### 7
