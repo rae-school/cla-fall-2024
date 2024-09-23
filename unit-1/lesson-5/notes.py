@@ -1,13 +1,14 @@
-from PIL import Image
-import random
+# from PIL import Image
+# import random
 
 
-### pixel grid!
-# imagePixels = [];
+## pixel grid!
+# imagePixels = []
 # width = 100
 # height = 100
-# for y in range(100):
-#     for x in range(100): 
+# for y in range(width):
+#     for x in range(height): 
+
 #         imagePixels.append((x,y))
 
 # print(imagePixels, "\n \n \n There are", len(imagePixels), "pixels because the width multiplied by the height", width, "x", height, "is equal to", width*height)
@@ -35,7 +36,9 @@ import random
 
 # img = img.convert("RGB")
 
-# img.save("so-less-random.png")
+# randomnumberforimage = int(random.random() * 10000)
+
+# img.save("so-less-random" + str(randomnumberforimage) + ".jpg")
 
 
 
@@ -51,7 +54,7 @@ import random
 
 # img = Image.new("RGB", (width,height), (255,255,255) )
 
-# # loop 500 times, and each time, pick a random x and a random y
+# loop 500 times, and each time, pick a random x and a random y
 # # and draw a pixel there
 # for n in range(500):
     
@@ -65,11 +68,19 @@ import random
 
 #     ## gaussian distribution just for x
 #     x = int( random.gauss(50,10) )
-#     y = int( random.random() * 100  )
+#     y = int( random.gauss(50,10))
 
 #     img.putpixel( (x,y), (0,0,0) )
 
 # img.save("more-rando-gauss-x.png")
+
+
+
+
+## first i will get 1 random  images from this 
+
+
+
 
 
 
@@ -93,6 +104,32 @@ import random
 
 ## 6 in class exercise
 
+from os import listdir, path
+import random
+from PIL import Image
+
+files = listdir("images")
+# files.remove(".DS_Store")
+
+random_file = random.choice(files)
+
+img = Image.open( path.join("images",random_file) )
+
+img_hsv = img.convert(mode="HSV")
+img_hsv_data = img_hsv.getdata()
+
+new_img_data = []
+
+for p in img_hsv_data:
+    if p[2] < 55:
+        new_img_data.append( (120,120,120) )
+    else:
+        new_img_data.append(p)
+
+
+img_hsv.putdata(new_img_data)
+img_rgb = img_hsv.convert("RGB")
+img_rgb.save(path.join("images","new.jpg") )
 
 
 # ### 7
