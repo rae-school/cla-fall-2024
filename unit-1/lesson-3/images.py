@@ -16,3 +16,19 @@ print("Size: " + str(img.size) )
 # cd unit-1/lesson-3
 # then run:
 # python3 assignment3.py image-1.jpg 40
+
+
+
+
+firstThingFromUser = sys.argv[1]
+
+orange = Image.open( firstThingFromUser )
+
+
+
+
+
+# create a variable, call it orange
+# set that variable equal
+# an image that the user decides
+# i pass that image name into the Image.open() function that is part of the python library
