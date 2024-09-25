@@ -44,39 +44,39 @@ from PIL import Image
 
 # ### Part 2 review
 
-# if len(sys.argv) != 3:
-#     exit("This program requires two arguments: the name of two image files to combine.")
+if len(sys.argv) != 3:
+    exit("This program requires two arguments: the name of two image files to combine.")
 
-# # open both images
-# img1 = Image.open( sys.argv[1] )
-# img2 = Image.open( sys.argv[2] )
+# open both images
+img1 = Image.open( sys.argv[1] )
+img2 = Image.open( sys.argv[2] )
 
-# # resize both images so they are no bigger than 400x400
-# # don't preserve aspect ration , just crop
-# img1.resize( (800,400) )
-# img2.resize( (800,400) )
-# img1.convert("RGBA")
-# img2.convert("RGBA")
-# # make a new image 600x600, with a white background
-# # Note that this image now has an "alpha" component
-# ## make 800 width by 400 height
-# new_image = Image.new( "RGBA", (800,400), "red" )
+# resize both images so they are no bigger than 800 x 400
+# don't preserve aspect ration , just crop
+img1.resize( (800,400) )
+img2.resize( (800,400) )
+img1.convert("RGBA")
+img2.convert("RGBA")
+# make a new image 600x600, with a white background
+# Note that this image now has an "alpha" component
+## make 800 width by 400 height
+new_image = Image.new( "RGBA", (800,400), "red" )
 
-# img1.putalpha(220)
-# img2.putalpha(50)
+img1.putalpha(220)
+img2.putalpha(50)
 
-# # paste in the first image to the upper-left corner (0,0)
-# new_image.paste(img1, (0,0) )
+# paste in the first image to the upper-left corner (0,0)
+new_image.paste(img1, (0,0) )
 
-# # dont composite but just add image without transparency
-# # new_image.paste(img2, (400,0) )
+# dont composite but just add image without transparency
+# new_image.paste(img2, (400,0) )
 
-# # paste in the second image, preserving its new transparency
-# new_image.alpha_composite(img2, (0,0) )
+# paste in the second image, preserving its new transparency
+new_image.alpha_composite(img2, (200,50) )
 
-# # save the resulting image
-# # Note that we must convert it to RGB with no alpha to save it as a JPEG
-# new_image.convert("RGB").save("part-2-review.jpg")
+# save the resulting image
+# Note that we must convert it to RGB with no alpha to save it as a JPEG
+new_image.convert("RGB").save("algo-1-final.jpg")
 
 
 
