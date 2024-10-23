@@ -5,6 +5,9 @@ filename = sys.argv[1]
 text = open(filename).read().lower().split()
 markovDictionary = {}	
 
+
+
+# use this function to get indexes for words
 def getIndexForWord(wordFromLoop, nextPossibleWordsAmount): 
     possibleWordIndexes = []
     allWords = []
@@ -14,6 +17,11 @@ def getIndexForWord(wordFromLoop, nextPossibleWordsAmount):
     # print(wordFromLoop, "indexes:", possibleWordIndexes)
     return possibleWordIndexes[nextPossibleWordsAmount]
 
+
+
+
+
+# build dictionary
 totalWords = len(text)
 for word in text:
     if not word in markovDictionary:
@@ -32,6 +40,10 @@ for word in text:
 
 # print(markovDictionary)
 
+
+
+
+# generate text from dictionary
 chosenWord = random.choice(text)
 generatedText = []
 for i in range(80):
