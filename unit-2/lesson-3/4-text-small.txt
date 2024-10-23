@@ -1,1 +1,9 @@
-to be or not to be or what is it or isnt it
+I like apples.
+
+I like oranges.
+
+Apples are red or green.
+
+Oranges are orange.
+
+Red, green, and orange are colors.
